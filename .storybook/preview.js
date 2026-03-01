@@ -1,5 +1,18 @@
 import '../src/index.css';
 
+/* Inject Google Fonts into the Storybook document head at module load time.
+   src/index.css carries the same @import for the React app. */
+const GOOGLE_FONTS_URL =
+  'https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap';
+
+if (typeof document !== 'undefined' && !document.getElementById('meridian-fonts')) {
+  const link = document.createElement('link');
+  link.id   = 'meridian-fonts';
+  link.rel  = 'stylesheet';
+  link.href = GOOGLE_FONTS_URL;
+  document.head.appendChild(link);
+}
+
 /** @type { import('@storybook/react-vite').Preview } */
 const preview = {
   parameters: {

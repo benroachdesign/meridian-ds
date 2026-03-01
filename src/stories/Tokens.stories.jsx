@@ -85,7 +85,7 @@ export const Colors = () => (
       <Swatch key={step} token={`--color-neutral-${step}`} />
     ))}
 
-    <SectionHeading>Accent Scale — Slate Blue</SectionHeading>
+    <SectionHeading>Accent Scale — Sage Green</SectionHeading>
     {accentScale.map(step => (
       <Swatch key={step} token={`--color-accent-${step}`} />
     ))}
@@ -112,43 +112,148 @@ export const Colors = () => (
    Typography Story
    ------------------------------------------------------------------------- */
 const typeSamples = [
-  { label: 'Display',    size: 'var(--type-display-size)',    weight: 'var(--type-display-weight)',   tracking: 'var(--type-display-tracking)' },
-  { label: 'H1',         size: 'var(--type-h1-size)',         weight: 'var(--type-h1-weight)',        tracking: 'var(--type-h1-tracking)' },
-  { label: 'H2',         size: 'var(--type-h2-size)',         weight: 'var(--type-h2-weight)',        tracking: 'var(--type-h2-tracking)' },
-  { label: 'H3',         size: 'var(--type-h3-size)',         weight: 'var(--type-h3-weight)',        tracking: 'var(--type-h3-tracking)' },
-  { label: 'H4',         size: 'var(--type-h4-size)',         weight: 'var(--type-h4-weight)',        tracking: 'var(--letter-spacing-normal)' },
-  { label: 'H5',         size: 'var(--type-h5-size)',         weight: 'var(--type-h5-weight)',        tracking: 'var(--letter-spacing-normal)' },
-  { label: 'H6',         size: 'var(--type-h6-size)',         weight: 'var(--type-h6-weight)',        tracking: 'var(--type-h6-tracking)' },
-  { label: 'Body',       size: 'var(--type-body-size)',       weight: 'var(--type-body-weight)',      tracking: 'var(--type-body-tracking)' },
-  { label: 'Body Small', size: 'var(--type-body-sm-size)',    weight: 'var(--type-body-sm-weight)',   tracking: 'var(--type-body-sm-tracking)' },
-  { label: 'Label',      size: 'var(--type-label-size)',      weight: 'var(--type-label-weight)',     tracking: 'var(--type-label-tracking)' },
-  { label: 'Caption',    size: 'var(--type-caption-size)',    weight: 'var(--type-caption-weight)',   tracking: 'var(--type-caption-tracking)' },
-  { label: 'Overline',   size: 'var(--type-overline-size)',   weight: 'var(--type-overline-weight)',  tracking: 'var(--type-overline-tracking)', transform: 'uppercase' },
+  {
+    label:    'Display',
+    family:   'var(--type-display-family)',
+    size:     'var(--type-display-size)',
+    weight:   'var(--type-display-weight)',
+    tracking: 'var(--type-display-tracking)',
+    text:     'Considered by design.',
+  },
+  {
+    label:    'H1',
+    family:   'var(--type-h1-family)',
+    size:     'var(--type-h1-size)',
+    weight:   'var(--type-h1-weight)',
+    tracking: 'var(--type-h1-tracking)',
+    text:     'Considered by design.',
+  },
+  {
+    label:    'H2',
+    family:   'var(--type-h2-family)',
+    size:     'var(--type-h2-size)',
+    weight:   'var(--type-h2-weight)',
+    tracking: 'var(--type-h2-tracking)',
+    text:     'Quiet luxury, precisely made.',
+  },
+  {
+    label:    'H3',
+    family:   'var(--type-h3-family)',
+    size:     'var(--type-h3-size)',
+    weight:   'var(--type-h3-weight)',
+    tracking: 'var(--type-h3-tracking)',
+    text:     'Every detail earns its place.',
+  },
+  {
+    label:    'H4',
+    family:   'var(--type-h4-family)',
+    size:     'var(--type-h4-size)',
+    weight:   'var(--type-h4-weight)',
+    tracking: 'var(--type-h4-tracking)',
+    text:     'The craft is in the details.',
+  },
+  {
+    label:    'H5',
+    family:   'var(--type-h5-family)',
+    size:     'var(--type-h5-size)',
+    weight:   'var(--type-h5-weight)',
+    tracking: 'var(--type-h5-tracking)',
+    text:     'The craft is in the details.',
+  },
+  {
+    label:    'H6',
+    family:   'var(--type-h6-family)',
+    size:     'var(--type-h6-size)',
+    weight:   'var(--type-h6-weight)',
+    tracking: 'var(--type-h6-tracking)',
+    text:     'The craft is in the details.',
+  },
+  {
+    label:    'Body',
+    family:   'var(--font-family-sans)',
+    size:     'var(--type-body-size)',
+    weight:   'var(--type-body-weight)',
+    tracking: 'var(--type-body-tracking)',
+    text:     'Good design systems create space for great products to emerge — they establish trust through consistency and free teams to focus on what matters.',
+  },
+  {
+    label:    'Body Small',
+    family:   'var(--font-family-sans)',
+    size:     'var(--type-body-sm-size)',
+    weight:   'var(--type-body-sm-weight)',
+    tracking: 'var(--type-body-sm-tracking)',
+    text:     'Consistency and trust are the foundation of good design.',
+  },
+  {
+    label:    'Label',
+    family:   'var(--font-family-sans)',
+    size:     'var(--type-label-size)',
+    weight:   'var(--type-label-weight)',
+    tracking: 'var(--type-label-tracking)',
+    text:     'Supporting information',
+  },
+  {
+    label:    'Caption',
+    family:   'var(--font-family-sans)',
+    size:     'var(--type-caption-size)',
+    weight:   'var(--type-caption-weight)',
+    tracking: 'var(--type-caption-tracking)',
+    text:     'Last updated 28 Feb 2026',
+  },
+  {
+    label:    'Overline',
+    family:   'var(--font-family-sans)',
+    size:     'var(--type-overline-size)',
+    weight:   'var(--type-overline-weight)',
+    tracking: 'var(--type-overline-tracking)',
+    text:     'Featured collection',
+    transform: 'uppercase',
+  },
 ];
 
 export const Typography = () => (
   <div style={{ fontFamily: 'var(--font-family-sans)', padding: '24px' }}>
-    <h2 style={{ fontSize: 'var(--type-h2-size)', marginBottom: '4px' }}>Typography</h2>
+    <h2 style={{
+      fontFamily: 'var(--font-family-sans)',
+      fontSize: 'var(--type-h5-size)',
+      fontWeight: 'var(--font-weight-semibold)',
+      marginBottom: '4px',
+    }}>
+      Typography
+    </h2>
     <p style={{ color: 'var(--color-text-secondary)', marginBottom: '32px' }}>
-      System font stacks. Swap to Inter or another typeface by overriding{' '}
-      <code>--font-family-sans</code>.
+      Instrument Serif for display and editorial hierarchy. Inter for UI, body, and functional text.
     </p>
 
-    {typeSamples.map(({ label, size, weight, tracking, transform }) => (
+    {typeSamples.map(({ label, family, size, weight, tracking, text, transform }) => (
       <div key={label} style={{
         display: 'grid',
-        gridTemplateColumns: '120px 1fr',
+        gridTemplateColumns: '88px 1fr',
         gap: '16px',
         alignItems: 'baseline',
-        marginBottom: '16px',
-        paddingBottom: '16px',
+        marginBottom: '20px',
+        paddingBottom: '20px',
         borderBottom: '1px solid var(--color-border-default)',
       }}>
-        <span style={{ fontSize: '11px', color: 'var(--color-text-placeholder)', fontWeight: 500 }}>
+        <span style={{
+          fontSize: '11px',
+          fontFamily: 'var(--font-family-sans)',
+          color: 'var(--color-text-placeholder)',
+          fontWeight: 500,
+          paddingTop: '4px',
+        }}>
           {label}
         </span>
-        <span style={{ fontSize: size, fontWeight: weight, letterSpacing: tracking, textTransform: transform }}>
-          Meridian
+        <span style={{
+          fontFamily: family,
+          fontSize: size,
+          fontWeight: weight,
+          letterSpacing: tracking,
+          textTransform: transform,
+          lineHeight: 'var(--line-height-snug)',
+          color: 'var(--color-text-primary)',
+        }}>
+          {text}
         </span>
       </div>
     ))}

@@ -2,6 +2,10 @@
    Tokens are loaded first so all custom properties are available
    before any element rules that consume them.
    ========================================================================== */
+
+/* Google Fonts — must come before all other @imports */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap');
+
 @import './tokens/index.css';
 
 /* -------------------------------------------------------------------------
@@ -34,18 +38,16 @@ body {
    ------------------------------------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 var(--stack-sm);
-  font-family: var(--font-family-sans);
-  font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-tight);
   color: var(--color-text-primary);
 }
 
-h1 { font-size: var(--type-h1-size); font-weight: var(--type-h1-weight); letter-spacing: var(--type-h1-tracking); }
-h2 { font-size: var(--type-h2-size); font-weight: var(--type-h2-weight); letter-spacing: var(--type-h2-tracking); }
-h3 { font-size: var(--type-h3-size); font-weight: var(--type-h3-weight); letter-spacing: var(--type-h3-tracking); }
-h4 { font-size: var(--type-h4-size); font-weight: var(--type-h4-weight); }
-h5 { font-size: var(--type-h5-size); font-weight: var(--type-h5-weight); }
-h6 { font-size: var(--type-h6-size); font-weight: var(--type-h6-weight); letter-spacing: var(--type-h6-tracking); }
+h1 { font-family: var(--type-h1-family); font-size: var(--type-h1-size); font-weight: var(--type-h1-weight); letter-spacing: var(--type-h1-tracking); }
+h2 { font-family: var(--type-h2-family); font-size: var(--type-h2-size); font-weight: var(--type-h2-weight); letter-spacing: var(--type-h2-tracking); }
+h3 { font-family: var(--type-h3-family); font-size: var(--type-h3-size); font-weight: var(--type-h3-weight); letter-spacing: var(--type-h3-tracking); }
+h4 { font-family: var(--type-h4-family); font-size: var(--type-h4-size); font-weight: var(--type-h4-weight); }
+h5 { font-family: var(--type-h5-family); font-size: var(--type-h5-size); font-weight: var(--type-h5-weight); }
+h6 { font-family: var(--type-h6-family); font-size: var(--type-h6-size); font-weight: var(--type-h6-weight); letter-spacing: var(--type-h6-tracking); }
 
 p {
   margin: 0 0 var(--stack-md);

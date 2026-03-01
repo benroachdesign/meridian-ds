@@ -1,76 +1,78 @@
 /* ==========================================================================
    Meridian Design System — Color Tokens
-   Neutral, professional palette with no strong brand hue.
+   Neutral-first palette. Accent is sage eucalyptus green.
    ========================================================================== */
 
 :root {
   /* -------------------------------------------------------------------------
-     Neutral Scale
-     A 12-step gray ramp that covers surface, border, text, and icon needs.
+     Neutral Scale — warm-tinted grays
+     A barely-perceptible warm (yellow/brown) undertone runs across the ramp.
+     Light end anchored at #F7F7F5, dark end at #1A1A17.
      ------------------------------------------------------------------------- */
-  --color-neutral-0:   #ffffff;
-  --color-neutral-50:  #f8f8f8;
-  --color-neutral-100: #f0f0f0;
-  --color-neutral-150: #e8e8e8;
-  --color-neutral-200: #dedede;
-  --color-neutral-300: #c8c8c8;
-  --color-neutral-400: #adadad;
-  --color-neutral-500: #8f8f8f;
-  --color-neutral-600: #6e6e6e;
-  --color-neutral-700: #4f4f4f;
-  --color-neutral-800: #333333;
-  --color-neutral-900: #1a1a1a;
-  --color-neutral-950: #0d0d0d;
+  --color-neutral-0:    #FFFFFF;
+  --color-neutral-50:   #F7F7F5;
+  --color-neutral-100:  #F0F0EC;
+  --color-neutral-150:  #E8E8E4;
+  --color-neutral-200:  #DCDCD8;
+  --color-neutral-300:  #C5C5C0;
+  --color-neutral-400:  #ADADA8;
+  --color-neutral-500:  #8E8E88;
+  --color-neutral-600:  #6C6C66;
+  --color-neutral-700:  #4E4E49;
+  --color-neutral-800:  #333330;
+  --color-neutral-900:  #1A1A17;
+  --color-neutral-950:  #0F0F0D;
   --color-neutral-1000: #000000;
 
   /* -------------------------------------------------------------------------
-     Accent — Slate Blue (restrained; used only for interactive affordances)
+     Accent — Sage Eucalyptus Green
+     Restrained; used only for interactive affordances and focus states.
      ------------------------------------------------------------------------- */
-  --color-accent-50:  #f0f2f7;
-  --color-accent-100: #dce1ef;
-  --color-accent-200: #b8c3df;
-  --color-accent-300: #8fa0cb;
-  --color-accent-400: #6a80b8;
-  --color-accent-500: #4d63a3;   /* primary interactive */
-  --color-accent-600: #3d5090;
-  --color-accent-700: #2f3e74;
-  --color-accent-800: #212d56;
-  --color-accent-900: #141b38;
+  --color-accent-50:  #F2F5F2;
+  --color-accent-100: #E0E8E1;
+  --color-accent-200: #C2D4C4;
+  --color-accent-300: #A3BFA6;
+  --color-accent-400: #85AA89;
+  --color-accent-500: #6B8F71;   /* primary resting */
+  --color-accent-600: #587660;
+  --color-accent-700: #455D4C;
+  --color-accent-800: #324438;
+  --color-accent-900: #1F2B23;
 
   /* -------------------------------------------------------------------------
      Semantic — Feedback
      ------------------------------------------------------------------------- */
-  --color-success-light: #e8f5ec;
-  --color-success:       #2d7d46;
-  --color-success-dark:  #1a5230;
+  --color-success-light: #E8F5EC;
+  --color-success:       #2D7D46;
+  --color-success-dark:  #1A5230;
 
-  --color-warning-light: #fdf3e3;
-  --color-warning:       #c47c00;
-  --color-warning-dark:  #7d4f00;
+  --color-warning-light: #FDF3E3;
+  --color-warning:       #C47C00;
+  --color-warning-dark:  #7D4F00;
 
-  --color-danger-light:  #fdecea;
-  --color-danger:        #c0392b;
-  --color-danger-dark:   #7a2319;
+  --color-danger-light:  #FDECEA;
+  --color-danger:        #C0392B;
+  --color-danger-dark:   #7A2319;
 
-  --color-info-light:    #e6f2fb;
-  --color-info:          #1a6ea8;
-  --color-info-dark:     #0f4470;
+  --color-info-light:    #E6F2FB;
+  --color-info:          #1A6EA8;
+  --color-info-dark:     #0F4470;
 
   /* -------------------------------------------------------------------------
      Semantic — Surface & Text aliases
-     Consumers should reference these aliases; raw scale is for token authoring.
+     Consumers should reference these; raw scale is for token authoring only.
      ------------------------------------------------------------------------- */
 
   /* Backgrounds */
-  --color-surface-base:     var(--color-neutral-0);
-  --color-surface-subtle:   var(--color-neutral-50);
-  --color-surface-raised:   var(--color-neutral-0);
-  --color-surface-overlay:  var(--color-neutral-900);
+  --color-surface-base:    var(--color-neutral-0);
+  --color-surface-subtle:  var(--color-neutral-50);
+  --color-surface-raised:  var(--color-neutral-0);
+  --color-surface-overlay: var(--color-neutral-900);
 
   /* Borders */
-  --color-border-default:   var(--color-neutral-200);
-  --color-border-strong:    var(--color-neutral-400);
-  --color-border-focus:     var(--color-accent-500);
+  --color-border-default:  var(--color-neutral-200);
+  --color-border-strong:   var(--color-neutral-400);
+  --color-border-focus:    var(--color-accent-500);
 
   /* Text */
   --color-text-primary:     var(--color-neutral-900);
@@ -88,7 +90,7 @@
   --color-interactive-disabled: var(--color-neutral-300);
 
   /* -------------------------------------------------------------------------
-     Dark-mode overrides (prefers-color-scheme)
+     Dark-mode overrides
      Only aliases are swapped; scale values are never redefined.
      ------------------------------------------------------------------------- */
   @media (prefers-color-scheme: dark) {
@@ -99,10 +101,10 @@
     --color-border-default:  var(--color-neutral-700);
     --color-border-strong:   var(--color-neutral-500);
 
-    --color-text-primary:    var(--color-neutral-50);
-    --color-text-secondary:  var(--color-neutral-400);
+    --color-text-primary:     var(--color-neutral-50);
+    --color-text-secondary:   var(--color-neutral-400);
     --color-text-placeholder: var(--color-neutral-600);
-    --color-text-disabled:   var(--color-neutral-700);
+    --color-text-disabled:    var(--color-neutral-700);
 
     --color-interactive:         var(--color-accent-400);
     --color-interactive-hover:   var(--color-accent-300);
