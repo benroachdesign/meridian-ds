@@ -1,0 +1,12 @@
+/* ==========================================================================
+   Meridian Design System — Token Entry Point
+   Import this single file to load all design tokens.
+
+   CSS usage:  @import './tokens/index.css';
+   JS usage:   import './tokens/index.css';
+   ========================================================================== */
+
+@import './color.css';
+@import './typography.css';
+@import './spacing.css';
+@import './motion.css';

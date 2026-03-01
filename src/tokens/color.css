@@ -1,0 +1,113 @@
+/* ==========================================================================
+   Meridian Design System — Color Tokens
+   Neutral, professional palette with no strong brand hue.
+   ========================================================================== */
+
+:root {
+  /* -------------------------------------------------------------------------
+     Neutral Scale
+     A 12-step gray ramp that covers surface, border, text, and icon needs.
+     ------------------------------------------------------------------------- */
+  --color-neutral-0:   #ffffff;
+  --color-neutral-50:  #f8f8f8;
+  --color-neutral-100: #f0f0f0;
+  --color-neutral-150: #e8e8e8;
+  --color-neutral-200: #dedede;
+  --color-neutral-300: #c8c8c8;
+  --color-neutral-400: #adadad;
+  --color-neutral-500: #8f8f8f;
+  --color-neutral-600: #6e6e6e;
+  --color-neutral-700: #4f4f4f;
+  --color-neutral-800: #333333;
+  --color-neutral-900: #1a1a1a;
+  --color-neutral-950: #0d0d0d;
+  --color-neutral-1000: #000000;
+
+  /* -------------------------------------------------------------------------
+     Accent — Slate Blue (restrained; used only for interactive affordances)
+     ------------------------------------------------------------------------- */
+  --color-accent-50:  #f0f2f7;
+  --color-accent-100: #dce1ef;
+  --color-accent-200: #b8c3df;
+  --color-accent-300: #8fa0cb;
+  --color-accent-400: #6a80b8;
+  --color-accent-500: #4d63a3;   /* primary interactive */
+  --color-accent-600: #3d5090;
+  --color-accent-700: #2f3e74;
+  --color-accent-800: #212d56;
+  --color-accent-900: #141b38;
+
+  /* -------------------------------------------------------------------------
+     Semantic — Feedback
+     ------------------------------------------------------------------------- */
+  --color-success-light: #e8f5ec;
+  --color-success:       #2d7d46;
+  --color-success-dark:  #1a5230;
+
+  --color-warning-light: #fdf3e3;
+  --color-warning:       #c47c00;
+  --color-warning-dark:  #7d4f00;
+
+  --color-danger-light:  #fdecea;
+  --color-danger:        #c0392b;
+  --color-danger-dark:   #7a2319;
+
+  --color-info-light:    #e6f2fb;
+  --color-info:          #1a6ea8;
+  --color-info-dark:     #0f4470;
+
+  /* -------------------------------------------------------------------------
+     Semantic — Surface & Text aliases
+     Consumers should reference these aliases; raw scale is for token authoring.
+     ------------------------------------------------------------------------- */
+
+  /* Backgrounds */
+  --color-surface-base:     var(--color-neutral-0);
+  --color-surface-subtle:   var(--color-neutral-50);
+  --color-surface-raised:   var(--color-neutral-0);
+  --color-surface-overlay:  var(--color-neutral-900);
+
+  /* Borders */
+  --color-border-default:   var(--color-neutral-200);
+  --color-border-strong:    var(--color-neutral-400);
+  --color-border-focus:     var(--color-accent-500);
+
+  /* Text */
+  --color-text-primary:     var(--color-neutral-900);
+  --color-text-secondary:   var(--color-neutral-600);
+  --color-text-placeholder: var(--color-neutral-400);
+  --color-text-disabled:    var(--color-neutral-300);
+  --color-text-inverse:     var(--color-neutral-0);
+  --color-text-link:        var(--color-accent-500);
+  --color-text-link-hover:  var(--color-accent-700);
+
+  /* Interactive */
+  --color-interactive:          var(--color-accent-500);
+  --color-interactive-hover:    var(--color-accent-600);
+  --color-interactive-active:   var(--color-accent-700);
+  --color-interactive-disabled: var(--color-neutral-300);
+
+  /* -------------------------------------------------------------------------
+     Dark-mode overrides (prefers-color-scheme)
+     Only aliases are swapped; scale values are never redefined.
+     ------------------------------------------------------------------------- */
+  @media (prefers-color-scheme: dark) {
+    --color-surface-base:    var(--color-neutral-950);
+    --color-surface-subtle:  var(--color-neutral-900);
+    --color-surface-raised:  var(--color-neutral-800);
+
+    --color-border-default:  var(--color-neutral-700);
+    --color-border-strong:   var(--color-neutral-500);
+
+    --color-text-primary:    var(--color-neutral-50);
+    --color-text-secondary:  var(--color-neutral-400);
+    --color-text-placeholder: var(--color-neutral-600);
+    --color-text-disabled:   var(--color-neutral-700);
+
+    --color-interactive:         var(--color-accent-400);
+    --color-interactive-hover:   var(--color-accent-300);
+    --color-interactive-active:  var(--color-accent-200);
+    --color-text-link:           var(--color-accent-400);
+    --color-text-link-hover:     var(--color-accent-300);
+  }
+}

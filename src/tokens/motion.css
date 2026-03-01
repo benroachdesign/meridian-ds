@@ -1,0 +1,133 @@
+/* ==========================================================================
+   Meridian Design System — Motion Tokens
+   Purposeful, restrained animation. Fast micro-interactions, slower reveals.
+   Respects prefers-reduced-motion throughout.
+   ========================================================================== */
+
+:root {
+  /* -------------------------------------------------------------------------
+     Duration
+     Short durations for micro-interactions; longer for layout & page transitions.
+     ------------------------------------------------------------------------- */
+  --duration-instant:   0ms;
+  --duration-75:        75ms;
+  --duration-100:       100ms;
+  --duration-150:       150ms;    /* hover highlights, focus rings */
+  --duration-200:       200ms;    /* toggles, checkboxes */
+  --duration-300:       300ms;    /* panels sliding in, dropdowns */
+  --duration-400:       400ms;    /* modals, drawers */
+  --duration-500:       500ms;    /* page-level transitions */
+  --duration-700:       700ms;    /* skeleton shimmer cycle half */
+  --duration-1000:      1000ms;   /* progress indicators */
+  --duration-1500:      1500ms;   /* skeleton shimmer full cycle */
+
+  /* -------------------------------------------------------------------------
+     Easing (cubic-bezier)
+     Named after their motion character rather than direction.
+     ------------------------------------------------------------------------- */
+
+  /* Standard — enters and exits at the same speed; good for most UI elements */
+  --ease-standard:      cubic-bezier(0.4, 0.0, 0.2, 1.0);
+
+  /* Enter — decelerates at rest; for elements entering the viewport */
+  --ease-enter:         cubic-bezier(0.0, 0.0, 0.2, 1.0);
+
+  /* Exit — accelerates from rest; for elements leaving the viewport */
+  --ease-exit:          cubic-bezier(0.4, 0.0, 1.0, 1.0);
+
+  /* Emphasized — strong deceleration; for hero or attention elements */
+  --ease-emphasized:    cubic-bezier(0.2, 0.0, 0.0, 1.0);
+
+  /* Spring-like — slight overshoot; for interactive feedback (button press) */
+  --ease-spring:        cubic-bezier(0.34, 1.56, 0.64, 1.0);
+
+  /* Linear — constant speed; for progress bars, loaders */
+  --ease-linear:        linear;
+
+  /* -------------------------------------------------------------------------
+     Composite Transitions  (duration + easing shorthand pairs)
+     Use with the CSS `transition` property.
+     Example:
+       transition: opacity var(--transition-fade);
+     ------------------------------------------------------------------------- */
+  --transition-instant:    var(--duration-instant) var(--ease-standard);
+  --transition-fast:       var(--duration-150) var(--ease-standard);
+  --transition-base:       var(--duration-200) var(--ease-standard);
+  --transition-moderate:   var(--duration-300) var(--ease-standard);
+  --transition-slow:       var(--duration-400) var(--ease-standard);
+
+  /* Directional helpers */
+  --transition-enter:      var(--duration-300) var(--ease-enter);
+  --transition-exit:       var(--duration-200) var(--ease-exit);
+
+  /* -------------------------------------------------------------------------
+     Semantic Aliases — intent-named transitions for components
+     ------------------------------------------------------------------------- */
+
+  /* Focus ring appearance */
+  --transition-focus:       var(--duration-150) var(--ease-standard);
+
+  /* Hover / active state color changes */
+  --transition-color:       var(--duration-150) var(--ease-standard);
+
+  /* Scale transforms (button press, card lift) */
+  --transition-scale:       var(--duration-150) var(--ease-spring);
+
+  /* Fade in / fade out */
+  --transition-fade:        var(--duration-200) var(--ease-standard);
+
+  /* Slide panels, drawers */
+  --transition-slide:       var(--duration-300) var(--ease-enter);
+
+  /* Expanding disclosure, accordion */
+  --transition-expand:      var(--duration-300) var(--ease-standard);
+
+  /* Modal / dialog backdrop + panel */
+  --transition-overlay:     var(--duration-400) var(--ease-enter);
+
+  /* Page-level transitions */
+  --transition-page:        var(--duration-500) var(--ease-emphasized);
+
+  /* -------------------------------------------------------------------------
+     Skeleton / Loading Shimmer
+     Use as a CSS animation timing in component stylesheets:
+       animation: shimmer var(--shimmer-duration) var(--shimmer-ease) infinite;
+     ------------------------------------------------------------------------- */
+  --shimmer-duration:       var(--duration-1500);
+  --shimmer-ease:           var(--ease-linear);
+
+  /* -------------------------------------------------------------------------
+     Reduced-Motion Override
+     All motion tokens collapse to instant/none when the user has requested
+     reduced motion. Components should rely on these tokens — not raw values —
+     so this override works automatically.
+     ------------------------------------------------------------------------- */
+  @media (prefers-reduced-motion: reduce) {
+    --duration-75:    0ms;
+    --duration-100:   0ms;
+    --duration-150:   0ms;
+    --duration-200:   0ms;
+    --duration-300:   0ms;
+    --duration-400:   0ms;
+    --duration-500:   0ms;
+    --duration-700:   0ms;
+    --duration-1000:  0ms;
+    --duration-1500:  0ms;
+
+    --transition-fast:     0ms var(--ease-standard);
+    --transition-base:     0ms var(--ease-standard);
+    --transition-moderate: 0ms var(--ease-standard);
+    --transition-slow:     0ms var(--ease-standard);
+    --transition-enter:    0ms var(--ease-enter);
+    --transition-exit:     0ms var(--ease-exit);
+    --transition-focus:    0ms var(--ease-standard);
+    --transition-color:    0ms var(--ease-standard);
+    --transition-scale:    0ms var(--ease-spring);
+    --transition-fade:     0ms var(--ease-standard);
+    --transition-slide:    0ms var(--ease-enter);
+    --transition-expand:   0ms var(--ease-standard);
+    --transition-overlay:  0ms var(--ease-enter);
+    --transition-page:     0ms var(--ease-emphasized);
+    --shimmer-duration:    0ms;
+  }
+}

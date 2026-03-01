@@ -1,0 +1,116 @@
+/* ==========================================================================
+   Meridian — Card component
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Base
+   -------------------------------------------------------------------------- */
+.card {
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+
+  /* Visual */
+  background-color: var(--color-surface-base);
+  border: var(--border-width-thin) solid var(--color-border-default);
+  overflow: hidden;
+
+  /* Shared padding token — overridden by size modifiers */
+  --card-padding: var(--inset-base);
+
+  /* Transitions */
+  transition:
+    box-shadow var(--transition-base),
+    transform  var(--transition-scale),
+    border-color var(--transition-color);
+}
+
+/* --------------------------------------------------------------------------
+   Radius modifiers
+   -------------------------------------------------------------------------- */
+.card--radius-sm { border-radius: var(--radius-sm); }
+.card--radius-md { border-radius: var(--radius-lg); }
+.card--radius-lg { border-radius: var(--radius-xl); }
+
+/* --------------------------------------------------------------------------
+   Shadow modifiers
+   When a shadow is applied, the border is made transparent so the two don't
+   double up visually.
+   -------------------------------------------------------------------------- */
+.card--shadow-none { box-shadow: var(--shadow-none); }
+
+.card--shadow-sm {
+  box-shadow:   var(--shadow-sm);
+  border-color: transparent;
+}
+
+.card--shadow-md {
+  box-shadow:   var(--shadow-md);
+  border-color: transparent;
+}
+
+/* --------------------------------------------------------------------------
+   Padding modifiers
+   Applied via --card-padding so header, body, and footer all share one value.
+   -------------------------------------------------------------------------- */
+.card--padding-sm { --card-padding: var(--inset-sm);   }
+.card--padding-md { --card-padding: var(--inset-base); }
+.card--padding-lg { --card-padding: var(--inset-lg);   }
+
+/* --------------------------------------------------------------------------
+   Header, Body, Footer
+   -------------------------------------------------------------------------- */
+.card__header {
+  padding: var(--card-padding);
+  border-bottom: var(--border-width-thin) solid var(--color-border-default);
+  flex-shrink: 0;
+}
+
+.card__body {
+  padding: var(--card-padding);
+  flex: 1;
+}
+
+.card__footer {
+  padding: var(--card-padding);
+  border-top: var(--border-width-thin) solid var(--color-border-default);
+  background-color: var(--color-surface-subtle);
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Interactive — hover lift effect
+   Each shadow tier steps up one level on hover; the card rises 2 px.
+   -------------------------------------------------------------------------- */
+.card--interactive {
+  cursor: pointer;
+}
+
+.card--interactive:focus { outline: none; }
+.card--interactive:focus-visible {
+  outline: var(--border-width-thick) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.card--interactive:hover {
+  transform: translateY(-2px);
+}
+
+.card--interactive:active {
+  transform: translateY(0);
+}
+
+/* Shadow steps up on hover */
+.card--interactive.card--shadow-none:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.card--interactive.card--shadow-sm:hover {
+  box-shadow:   var(--shadow-md);
+  border-color: transparent;
+}
+
+.card--interactive.card--shadow-md:hover {
+  box-shadow:   var(--shadow-lg);
+  border-color: transparent;
+}
